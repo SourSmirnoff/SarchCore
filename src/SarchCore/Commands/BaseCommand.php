@@ -2,23 +2,21 @@
 
 namespace SarchCore\Commands;
 
-use SarchCore\SarchCore;
 use pocketmine\command\Command;
 use pocketmine\command\PluginIdentifiableCommand;
+use SarchCore\SarchCore;
 
-abstract class BaseCommand extends Command implements PluginIdentifiableCommand{
+abstract class BaseCommand extends Command implements PluginIdentifiableCommand {
 
-    private $plugin;
+	private $plugin;
 
-    public function __construct(String $name, SarchCore $plugin)
-    {
-        parent::__construct($name);
-        $this->plugin = $plugin;
-        $this->usageMessage = "";
-    }
+	public function __construct(String $name, SarchCore $plugin) {
+		parent::__construct($name);
+		$this->plugin = $plugin;
+		$this->usageMessage = "";
+	}
 
-    public function getPlugin()
-    {
-        return $this->plugin;
-    }
+	public function getPlugin() {
+		return $this->plugin;
+	}
 }

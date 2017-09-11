@@ -1,15 +1,13 @@
 <?php
+
 namespace SarchCore\Tasks;
 
-use pocketmine\scheduler\PluginTask;
-
 use pocketmine\level\Level;
-
 use pocketmine\Player;
-
+use pocketmine\scheduler\PluginTask;
 use SarchCore\SarchCore;
 
-class MobClearTask extends PluginTask{
+class MobClearTask extends PluginTask {
 
 	private $plugin;
 
@@ -18,7 +16,7 @@ class MobClearTask extends PluginTask{
 		parent::__construct($plugin);
 	}
 
-	public function onRun($currentTick) {
+	public function onRun(int $currentTick) {
 		foreach($this->plugin->getServer()->getLevels() as $level) {
 			if(!$level instanceof Level) {
 				continue;
