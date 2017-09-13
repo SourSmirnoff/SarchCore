@@ -1,0 +1,42 @@
+---
+
+# Entity ID: "Spawner name"
+spawners:
+  10: "&6Chicken Spawner"
+  11: "&6Cow Spawner"
+  12: "&6Pig Spawner"
+  13: "&6Sheep Spawner"
+  14: "&6Wolf Spawner"
+  16: "&6Mooshroom Spawner"
+  17: "&6Squid Spawner"
+  18: "&6Rabit Spawner"
+  20: "&6Iron Golem Spawner"
+  22: "&6Ocelot Spawner"
+  32: "&6Zombie Spawner"
+  33: "&6Creeper Spawner"
+  32: "&6Zombie Spawner"
+  33: "&6Creeper Spawner"
+  34: "&6Skeleton Spawner"
+  35: "&6Spider Spawner"
+  36: "&6Zombie Pigman Spawner"
+  37: "&6Slime Spawner"
+  38: "&6Enderman Spawner"
+  39: "&6Sliverfish Spawner"
+  40: "&6Cave Spider Spawner"
+  41: "&6Ghast Spawner"
+  42: "&6Magma Cube Spawner"
+  43: "&6Blaze Spawner"
+  44: "&6Zombie Villager Spawner"
+  45: "&6Witch Spawner"
+  46: "&6Stray Spawner"
+  47: "&6Husk Spawner"
+  48: "&6Wither Skeleton Spawner"
+
+
+# Stone Pickaxe => 274
+# Iron Pickaxe => 257
+# Diamond Pickaxe => 278
+allowed:
+- 257
+- 278
+...

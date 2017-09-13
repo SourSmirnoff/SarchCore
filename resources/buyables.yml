@@ -1,0 +1,24 @@
+---
+# To enable a spawner to be sold, Remove the "##" infront of it name.
+## You may also change the prices
+blaze: 500000
+cow: 50000
+pig: 50000
+sheep: 25000
+creeper: 750000
+spider: 25000
+cavespider: 25000
+## bat: 500
+chicken: 50000
+enderman: 250000
+## horse: 500
+## husk: 500
+irongolem: 1000000
+## lavaslime: 500
+## mooshroom: 500
+## rabbit: 500
+## snowgolem: 500
+## witch: 500
+## wolf: 500
+zombie: 500
+...
