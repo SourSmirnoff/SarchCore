@@ -1,4 +1,5 @@
 <?php
+
 namespace SarchCore\Bounties;
 
 use pocketmine\event\Listener;
