@@ -1,4 +1,5 @@
 <?php
+
 namespace SarchCore\Commands;
 
 use pocketmine\plugin\PluginBase;
@@ -8,16 +9,8 @@ use pocketmine\item\Item;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
-
 use onebone\economyapi\EconomyAPI;
-
 use SarchCore\SarchCore;
-
-/* Copyright (C) Daven Adams (Sour) - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Daven A sourservers@gmail.com, August 2017
- */
 
 class SpawnerShopCommand extends BaseCommand{
 
@@ -33,7 +26,6 @@ class SpawnerShopCommand extends BaseCommand{
     public $names = ["blaze" => 43, "cow" => 11, "pig" => 12, "sheep" => 13, "creeper" => 33, "spider" => 35, "cavespider" => 40, "bat" => 19, "chicken" => 10, "enderman" => 38, "horse" => 23, "husk" => 47, "irongolem" => 20, "lavaslime" => 42, "mooshroom" => 16, "rabbit" => 18, "snowgolem" => 21, "witch" => 45, "wolf" => 14, "zombie" => 32];
 
     public function execute(CommandSender $sender, $commandLabel, array $args){
-	//if(strtolower($cmd->getName()) == "spawner"){
         if(!isset($args[0])){
             $sender->sendMessage(TextFormat::RED . "Usage: /spawner <type:list>");
         return false;
