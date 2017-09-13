@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SarchCore\Spawners;
 
 use pocketmine\event\Listener;
@@ -14,12 +13,6 @@ use pocketmine\nbt\tag\{CompoundTag, IntTag, StringTag};
 use pocketmine\network\mcpe\protocol\Info;
 use pocketmine\event\server\DataPacketSendEvent;
 use SarchCore\SarchCore;
-
-/* Copyright (C) Daven Adams (Sour) - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Daven A sourservers@gmail.com, August 2017
- */
 
 class SilkListener implements Listener {
 
@@ -70,23 +63,4 @@ class SilkListener implements Listener {
 			}
 		}
 	}
-
-	/*public function onDataSend(DataPacketSendEvent $event) {
-		$pk = $event->getPacket();
-		$player = $event->getPlayer();
-		if ($pk::NETWORK_ID === Info::CONTAINER_SET_SLOT_PACKET) {
-			$item = $pk->item;
-			if ($item->getId() === Item::MONSTER_SPAWNER) {
-				$entityId = $item->getDamage();
-				if (($name = SilkSpawners::retrieveName($entityId)) !== null) {
-					if (!$item->hasCustomName()) {
-						$slot = $pk->slot;
-						$item->setCustomName($name);
-						$player->getInventory()->setItem($slot, $item);
-					}
-				}
-				return true;
-			}
-		}
-	}*/
 }
