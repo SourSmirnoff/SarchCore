@@ -1,34 +1,21 @@
 <?php
+
 namespace SarchCore\Spawners;
 
 use pocketmine\event\Listener;
-
 use pocketmine\event\block\BlockPlaceEvent;
-
 use pocketmine\event\player\PlayerItemHeldEvent;
-
 use pocketmine\block\MonsterSpawner;
-
 use pocketmine\level\Level;
 use pocketmine\level\Position;
-
 use pocketmine\tile\Tile;
 use pocketmine\tile\MobSpawner;
-
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\StringTag;
-
 use pocketmine\utils\TextFormat;
-
 use pocketmine\item\Item;
-
 use SarchCore\SarchCore;
-/* Copyright (C) Daven Adams (Sour) - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Daven A sourservers@gmail.com, August 2017
- */
 
 class ShopListener implements Listener{
 
