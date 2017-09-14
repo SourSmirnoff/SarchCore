@@ -16,11 +16,12 @@ use SarchCore\Tasks\MobClearTask;
 use SarchCore\Bounties\BountyManager;
 use SarchCore\Spawners\SilkListener;
 use SarchCore\Spawners\ShopListener;
+use SarchCore\SarchNotes\Notes;
 use onebone\economyapi\EconomyAPI;
 
 class SarchCore extends PluginBase {
 
-	protected $shoplistener, $bountymanager, $weaponsmanager, $staffmanager, $securitymanager, $envoymanager, $cheatmanager, $silklistener;
+	protected $shoplistener, $bountymanager, $weaponsmanager, $staffmanager, $securitymanager, $envoymanager, $cheatmanager, $silklistener, $notes;
 
 	protected static $allowed, $spawners = [];
 	
@@ -30,6 +31,7 @@ class SarchCore extends PluginBase {
 		$this->getServer()->getPluginManager()->registerEvents(($this->weaponsmanager = new CustomWeaponsManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->securitymanager = new SecurityManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->envoymanager = new EnvoyManager($this)), $this);
+		$this->getServer()->getPluginManager()->registerEvents(($this->notes = new Notes($this)), $this);
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new MobClearTask($this), 20 * (60 * 5));
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new EnvoyManager($this), 20 * (60 * 5));
@@ -63,7 +65,6 @@ class SarchCore extends PluginBase {
 	public function getEnvoyManager() {
 		return $this->envoymanager;
 	}
-
 	public function getSecurityManager() {
 		return $this->securitymanager;
 	}
@@ -72,6 +73,9 @@ class SarchCore extends PluginBase {
 	}
         public function getSilkListener() {
 		return $this->silklistener;
+	}
+	public function getNotes() {
+		return $this->notes;
 	}
         //////////////////////////////////////////////////////////////////////////////////////////////////
         private static function parseColors(string $string) {
