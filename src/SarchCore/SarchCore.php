@@ -5,6 +5,9 @@ namespace SarchCore;
 use pocketmine\plugin\PluginBase;
 use SarchCore\Cheat\CheatManager;
 use SarchCore\Commands\ClassCommand;
+use SarchCore\Commands\BountyCommand;
+use SarchCore\Commands\NoteCommand;
+use SarchCore\Commands\SpawnerShopCommand;
 use SarchCore\CustomWeapons\CustomWeaponsManager;
 use SarchCore\Envoys\EnvoyManager;
 use SarchCore\Security\SecurityManager;
@@ -21,18 +24,19 @@ class SarchCore extends PluginBase {
 	protected static $allowed, $spawners = [];
 	
 	public function onEnable() {
-		/*@mkdir($this->getDataFolder());     Not in use Currently
-		@mkdir($this->getDataFolder() . "/factions");*/
 		$this->getServer()->getPluginManager()->registerEvents(($this->staffmanager = new StaffManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->cheatmanager = new CheatManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->weaponsmanager = new CustomWeaponsManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->securitymanager = new SecurityManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->envoymanager = new EnvoyManager($this)), $this);
+		//////////////////////////////////////////////////////////////////////////////////////////////////
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new MobClearTask($this), 20 * (60 * 5));
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new EnvoyManager($this), 20 * (60 * 5));
+		//////////////////////////////////////////////////////////////////////////////////////////////////
 		$this->getServer()->getCommandMap()->register("bounty", new BountyCommand($this));
                 $this->getServer()->getCommandMap()->register("spawner", new SpawnerShopCommand($this));
-		
+		$this->getServer()->getCommandMap()->register("note", new NoteCommand($this));
+		//////////////////////////////////////////////////////////////////////////////////////////////////
 		if (!file_exists($this->getDataFolder() . 'config.yml')) {
 			@mkdir($this->getDataFolder());
 			file_put_contents($this->getDataFolder() . 'config.yml', $this->getResource('config.yml'));
@@ -46,7 +50,7 @@ class SarchCore extends PluginBase {
 			self::$allowed[$items] = true;
 		}
 	}
-
+	//////////////////////////////////////////////////////////////////////////////////////////////////
 	public function getEnvoyManager() {
 		return $this->envoymanager;
 	}
@@ -60,7 +64,7 @@ class SarchCore extends PluginBase {
         public function getSilkListener() {
 		return $this->silklistener;
 	}
-        
+        //////////////////////////////////////////////////////////////////////////////////////////////////
         private static function parseColors(string $string) {
 		return str_replace('&', TextFormat::ESCAPE, $string);
 	}
