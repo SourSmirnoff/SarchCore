@@ -34,7 +34,7 @@ class SarchCore extends PluginBase {
 		$this->getServer()->getPluginManager()->registerEvents(($this->notes = new Notes($this)), $this);
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new MobClearTask($this), 20 * (60 * 5));
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new EnvoyManager($this), 20 * (60 * 5));
+		//$this->getServer()->getScheduler()->scheduleRepeatingTask(new EnvoyManager($this), 20 * (60 * 5));
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		$this->getServer()->getCommandMap()->register("bounty", new BountyCommand($this));
                 $this->getServer()->getCommandMap()->register("spawner", new SpawnerShopCommand($this));
