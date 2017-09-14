@@ -16,7 +16,7 @@ class MobClearTask extends PluginTask {
 		parent::__construct($plugin);
 	}
 
-	public function onRun(int $currentTick) {
+	public function onRun(/*int */$currentTick) {
 		foreach($this->plugin->getServer()->getLevels() as $level) {
 			if(!$level instanceof Level) {
 				continue;
