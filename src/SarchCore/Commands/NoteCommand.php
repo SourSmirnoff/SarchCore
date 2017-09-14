@@ -9,7 +9,6 @@ use pocketmine\utils\TextFormat as TF;
 use pocketmine\item\Item;
 use pocketmine\block\Block;
 use pocketmine\inventory\BaseInventory;
-use onebone\economyapi\EconomyAPI;
 use pocketmine\Player;
 use pocketmine\scheduler\PluginTask;
 use onebone\economyapi\EconomyAPI;
