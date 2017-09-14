@@ -1,6 +1,6 @@
+<?php
 
 namespace Sarchcore\Commands;
-
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
