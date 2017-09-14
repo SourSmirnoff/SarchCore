@@ -16,6 +16,7 @@ use SarchCore\Tasks\MobClearTask;
 use SarchCore\Bounties\BountyManager;
 use SarchCore\Spawners\SilkListener;
 use SarchCore\Spawners\ShopListener;
+use onebone\economyapi\EconomyAPI;
 
 class SarchCore extends PluginBase {
 
@@ -36,6 +37,14 @@ class SarchCore extends PluginBase {
 		$this->getServer()->getCommandMap()->register("bounty", new BountyCommand($this));
                 $this->getServer()->getCommandMap()->register("spawner", new SpawnerShopCommand($this));
 		$this->getServer()->getCommandMap()->register("note", new NoteCommand($this));
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		if($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") != null){
+               		$this->economy = EconomyAPI::getInstance();
+               		$this->getLogger()->notice("EconomyAPI successfully detected!");
+          		}else{
+               		$this->economy = null;
+               		$this->getLogger()->warning("Failed to load EconomyAPI!");
+		}
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		if (!file_exists($this->getDataFolder() . 'config.yml')) {
 			@mkdir($this->getDataFolder());
