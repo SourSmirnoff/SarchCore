@@ -33,7 +33,7 @@ class EnvoyManager implements Listener {
 		for($i = 0; $i < 10; $i++) {
 			$x = mt_rand($loc->getX(), $loc->getX() + $n);
 			$z = mt_rand($loc->getX(), $loc->getZ() + $n);
-			$y = $lev->getHighestBlockAt($x, $z)->getY()++;
+			$y = $lev->getHighestBlockAt($x, $z)/*->getY()++*/;
 			$arr[] = new Vector3($x, $y, $z);
 			continue;
 		}
