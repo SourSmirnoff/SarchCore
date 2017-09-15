@@ -3,7 +3,6 @@
 namespace SarchCore;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as C;
 use SarchCore\Bounties\BountyManager;
 use SarchCore\CustomWeapons\CustomWeaponsManager;
 use SarchCore\Cheat\CheatManager;
