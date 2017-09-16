@@ -26,7 +26,7 @@ class SarchCore extends PluginBase {
 		$this->getServer()->getPluginManager()->registerEvents(($this->securitymanager = new SecurityManager($this)), $this);
 		$this->getServer()->getPluginManager()->registerEvents(($this->joinmsg = new JoinMSG($this)), $this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new MobClearTask($this), 20 * (60 * 5));
-		$this->getServer()->getScheduler()->scheduleDelayedRepeatingTask(new Bcast($this), 2000, 2000);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new Bcast($this), 2000, 2000);
 		$this->getServer()->getCommandMap()->register("bounty", new BountyCommand($this));
 	}
 	public function getBountyManager() {
