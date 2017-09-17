@@ -16,7 +16,7 @@ use SarchCore\Message\Bcast;
 
 class SarchCore extends PluginBase {
 
-	protected $bountymanager, $weaponsmanager, $staffmanager, $securitymanager, $message;
+	protected $bountymanager, $weaponsmanager, $staffmanager, $securitymanager, $message, $JoinMSG;
 
 	public function onEnable() {
 		$this->getServer()->getPluginManager()->registerEvents(($this->bountymanager = new BountyManager($this)), $this);
